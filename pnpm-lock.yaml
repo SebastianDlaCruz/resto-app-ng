@@ -29,6 +29,12 @@ dependencies:
   '@angular/router':
     specifier: ^17.0.0
     version: 17.3.12(@angular/common@17.3.12)(@angular/core@17.3.12)(@angular/platform-browser@17.3.12)(rxjs@7.8.1)
+  '@ng-icons/core':
+    specifier: ^29.10.0
+    version: 29.10.0(@angular/common@17.3.12)(@angular/core@17.3.12)(rxjs@7.8.1)
+  '@ng-icons/heroicons':
+    specifier: ^29.10.0
+    version: 29.10.0
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -2206,6 +2212,25 @@ packages:
     dependencies:
       call-bind: 1.0.8
     dev: true
+
+  /@ng-icons/core@29.10.0(@angular/common@17.3.12)(@angular/core@17.3.12)(rxjs@7.8.1):
+    resolution: {integrity: sha512-PR6SO00yvFhwDhh37BWhtAgRfzxuXpJQBsAQ44Pg3gjc83fOAwOtMSXizYwtN0uUFIkAYZHZCEuV7Sb8eosK+w==}
+    peerDependencies:
+      '@angular/common': '>=18.0.0'
+      '@angular/core': '>=18.0.0'
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 17.3.12(@angular/core@17.3.12)(rxjs@7.8.1)
+      '@angular/core': 17.3.12(rxjs@7.8.1)(zone.js@0.14.10)
+      rxjs: 7.8.1
+      tslib: 2.8.1
+    dev: false
+
+  /@ng-icons/heroicons@29.10.0:
+    resolution: {integrity: sha512-xUUXUYFL42eO0J14JOWoom/hxvBZr6E5H34icVNIThX022SjIArFYUQ21U5pf9KMoUDp9wxQJCKAGK1ZJbtmTA==}
+    dependencies:
+      tslib: 2.8.1
+    dev: false
 
   /@ngtools/webpack@17.3.11(@angular/compiler-cli@17.3.12)(typescript@5.2.2)(webpack@5.94.0):
     resolution: {integrity: sha512-SfTCbplt4y6ak5cf2IfqdoVOsnoNdh/j6Vu+wb8WWABKwZ5yfr2S/Gk6ithSKcdIZhAF8DNBOoyk1EJuf8Xkfg==}

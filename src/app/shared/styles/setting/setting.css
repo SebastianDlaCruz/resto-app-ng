@@ -1,0 +1,19 @@
+:root{
+
+  /* //TODO: colores primarios */
+
+  --background: #0E0E0E;
+  --background-secondary: #2d2d2d;
+  --input : #acacac;
+  --text-primary: #fff;
+
+  /* //TODO: colores secundarios */
+
+  --button-primary: #ffa800;
+  --button-secondary: #ffc451;
+  --sec: #fcdb9b;
+
+  /* //TODO: propiedades generales */
+
+    --padding-inline: 96px;
+}

@@ -1,0 +1,12 @@
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 106px;
+  padding-inline: var(--padding-inline);
+  background-color: var(--background);
+  .nav-bar__container{
+    display: flex;
+    align-items: center;
+  }
+}

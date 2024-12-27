@@ -1,0 +1,13 @@
+.button-add-cart{
+  height: 55px;
+  color: var(--background);
+  background-color: var(--button-primary);
+  transition: background-color 1s ease-out;
+  & span{
+    width: fit-content;
+  }
+
+  &:hover{
+    background-color: var(---button-secondary);
+  }
+}

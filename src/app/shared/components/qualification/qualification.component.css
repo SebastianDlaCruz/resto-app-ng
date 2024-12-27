@@ -1,0 +1,6 @@
+.qualification{
+  position: absolute;
+  top: 1%;
+  color: var(--text-primary);
+  background: linear-gradient(0deg, rgba(11,11,11,1) 33%, rgba(50,50,50,1) 100%);
+}

@@ -1,0 +1,29 @@
+<menu class="menu">
+  @for (item of items; track $index) {
+  @if (item.type === type.LINK) {
+  <li>
+    <a [routerLink]="item.link" routerLinkActive='active'>{{ item.name }}</a>
+  </li>
+  }
+
+  @if (item.type === type.BUTTON) {
+
+  @if(item.icon){
+  <li>
+    <button (click)="item?.action()">
+      <span>{{item.name}}</span>
+      <ng-icon [svg]="item.icon" class="icon"></ng-icon>
+    </button>
+  </li>
+  }
+  @else{
+
+  <li>
+    <button (click)="item?.action()">{{ item.name }}</button>
+  </li>
+  }
+  }
+
+  }
+
+</menu>

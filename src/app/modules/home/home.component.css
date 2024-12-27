@@ -1,0 +1,51 @@
+main{
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+input{
+  height: 50px;
+  width: 548px;
+  padding: 0 12px;
+  border: none;
+  background-color: var(--text-primary);
+}
+
+.container-hero{
+  height: 986px;
+  width: 100%;
+  border-end-end-radius: 100px;
+  border-end-start-radius: 100px;
+  background-image: url('../../../assets/img/home.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.container-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 31px;
+  padding-inline: var(--padding-inline);
+}
+
+
+hr{
+  width: 433px;
+}
+
+.flex-wrap{
+  gap: 20px;
+}
+
+.container-input{
+  position:relative;
+ & .magnifying{
+  position: absolute;
+  color: var(--input);
+  inset-inline-end: 4%;
+  inset-block: 27%;
+  font-size: 23px;
+ }
+}
