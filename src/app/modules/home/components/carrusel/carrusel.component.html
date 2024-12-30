@@ -1,0 +1,9 @@
+<div class="container-carrusel">
+
+  @for (dish of dishes; track dish.id) {
+  <app-card-plate [dish]="dish" />
+  }@empty {
+  <h1>sin resultado</h1>
+  }
+
+</div>

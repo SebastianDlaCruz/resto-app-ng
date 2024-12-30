@@ -4,6 +4,7 @@ export enum TypeUser {
 }
 
 export interface User {
+  id: string;
   userName: string;
   zipCode: string;
   locality: string;

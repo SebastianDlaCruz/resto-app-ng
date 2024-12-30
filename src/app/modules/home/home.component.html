@@ -1,10 +1,12 @@
+<app-nav-bar />
+
 <main>
   <div class="container-hero">
 
     <div class="container-content">
 
       <div class="container-input">
-        <input type="text" placeholder="buscar platillos" />
+        <input type="text" placeholder="Buscar" class="poppins-light" />
         <ng-icon [svg]="magnifying" class="magnifying"></ng-icon>
       </div>
 
@@ -17,20 +19,26 @@
         <hr />
       </div>
 
-      <p>carrusel</p>
-
+      <app-carrusel />
     </div>
 
   </div>
 
-  <section>
+  <section class="clients">
     <header>
-      <h2>Lo que dicen nuestros clientes</h2>
-      <p>Estamos muy orgullosos de ofrecer a nuestros clientes la mejor experiencia de Country Resto, y nos complace
+      <h2 class="poppins-medium">Lo que dicen nuestros clientes</h2>
+      <p class="poppins-light">Estamos muy orgullosos de ofrecer a nuestros clientes la mejor experiencia de Country
+        Resto, y nos complace
         saber que nuestros esfuerzos son apreciados. Te invitamos a conocernos y a disfrutar de nuestros platos
         destacados en la ciudad de Buenos Aires.</p>
     </header>
 
+
+    <app-list-users />
+
+
   </section>
 
 </main>
+
+<app-footer />

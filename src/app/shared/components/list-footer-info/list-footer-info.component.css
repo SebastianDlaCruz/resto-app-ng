@@ -1,0 +1,13 @@
+
+  dt{
+    font-weight: bold;
+  }
+  dd{
+    display: flex;
+    align-items: center;
+    gap:6px;
+    font-size: 12px;
+    margin:0;
+    margin-top: 10px;
+  }
+

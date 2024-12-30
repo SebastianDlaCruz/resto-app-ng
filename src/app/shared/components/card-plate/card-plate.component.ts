@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Dishes } from '../../../core/models';
 
 @Component({
   selector: 'app-card-plate',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './card-plate.component.css'
 })
 export class CardPlateComponent {
-
+  @Input({ required: true }) dish?: Dishes;
 }

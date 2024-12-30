@@ -1,0 +1,46 @@
+h3{
+  margin: 8px 0px;
+}
+
+.user{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  height: 142px;
+  min-width: 563px;
+  border-radius: 1px;
+  background-color: var(--users-container);
+  color: var(--background);
+}
+
+.user__header{
+  border-bottom: 0.4px solid var(--input);
+}
+
+.user-container__img{
+  --size:150px;
+
+  position: relative;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 208px;
+
+  img{
+    position: absolute;
+    top: -30px;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+}
+
+
+.paragraph{
+  width: 327px;
+  font-size: 12px;
+}
+
+
+.date{
+  color: var(--text-secondary);
+  font-size: 10px;
+}

@@ -4,5 +4,18 @@
   gap: 20px;
   width: fit-content;
   padding: 0 12px;
+
+  & li a{
+    color: var(--text-primary);
+    transition: color 0.3s ease-out;
+
+    &:hover{
+      color: var(--button-secondary);
+    }
+
+    &.active{
+      color: var(--button-primary);
+    }
+  }
 }
 

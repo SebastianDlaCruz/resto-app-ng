@@ -1,0 +1,21 @@
+@if (user) {
+
+<article class="user">
+
+  <div class="user-container__img">
+    <img [src]="user.img" [alt]="user.name" />
+  </div>
+
+  <div>
+    <header class="user__header">
+      <h3 class="poppins-bold">{{user.name}}</h3>
+    </header>
+
+    <p class="poppins-regular paragraph">{{user.description}}</p>
+
+    <footer>
+      <b class="poppins-regular date">{{user.date}}</b>
+    </footer>
+  </div>
+</article>
+}

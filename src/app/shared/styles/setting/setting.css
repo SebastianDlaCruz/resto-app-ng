@@ -12,8 +12,12 @@
   --button-primary: #ffa800;
   --button-secondary: #ffc451;
   --sec: #fcdb9b;
+  --users-container: #f9f6f6;
+  --text-secondary: #ACACAC;
 
   /* //TODO: propiedades generales */
-
     --padding-inline: 96px;
+    --invalid: #cc1010;
+
+
 }

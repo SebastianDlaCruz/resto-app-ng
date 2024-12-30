@@ -1,0 +1,21 @@
+main{
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.container-auth{
+  height: 701px;
+  width: 1252px;
+  padding: 6em;
+  border-radius: .5px;
+  color: var(--background);
+  background-color: var(--text-primary);
+}
+
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+}

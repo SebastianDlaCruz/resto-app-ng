@@ -1,0 +1,18 @@
+<footer class="footer">
+  <app-icon-main />
+
+  <div class="container-list">
+    @for (item of list; track item.title) {
+    <app-list-footer-info [list]="item"></app-list-footer-info>
+    }
+  </div>
+
+  <dl>
+    <dt class="poppins-medium">Seguinos</dt>
+    <dd>
+      <ng-icon [svg]="faceIcon"></ng-icon>
+      <ng-icon [svg]="twitterIcon"></ng-icon>
+    </dd>
+  </dl>
+
+</footer>

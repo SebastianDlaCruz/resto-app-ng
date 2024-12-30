@@ -1,0 +1,14 @@
+<div class="poppins-regula container-input" [ngClass]="{styleCss}">
+
+  <label class="poppins-regular" [for]="refId">{{ label}}</label>
+  <input [type]="type" class="poppins-regula" [name]="refId" [id]="refId" [placeholder]="placeholder"
+    (input)="onInputChange($event)" (blur)="onTouched?.()" [ngClass]="{
+      'invalid': control && control.invalid && control.touched
+    }" />
+
+  @if( visiblePassword){
+  <ng-icon [svg]="eye" class="icon-eye" (click)="onToggleStateEye()"></ng-icon>
+  }
+
+</div>
+<ng-content select="app-text-error-input"></ng-content>

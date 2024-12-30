@@ -1,0 +1,17 @@
+button{
+  height: 57px;
+  width: clamp(200px, 50vw, 533px);
+  padding: 0em 1em;
+  border-radius: 4px;
+  color: var(--background);
+  text-align: center;
+  background-color: var(--button-primary);
+  transition: background-color 1s ease-out;
+  &:hover{
+    background-color: var(--button-secondary);
+  }
+
+  &:disabled{
+    background-color: var(--sec);
+  }
+}

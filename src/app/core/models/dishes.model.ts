@@ -1,4 +1,5 @@
 export interface Dishes {
+  id: string;
   amount: number;
   category: string;
   description: string;

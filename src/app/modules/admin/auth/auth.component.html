@@ -1,0 +1,39 @@
+<main class="flex-center">
+
+  <section class="container-auth">
+    <header>
+      <h2 class="poppins-medium">Iniciar sesión</h2>
+    </header>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <app-input type="email" refId="email" formControlName="email" label="Correo electrónico" [control]="email">
+        @if(email?.touched && email?.invalid){
+        <app-text-error-input text="Campo requerido" />
+        }
+
+      </app-input>
+
+      <app-input type="password" refId="password" formControlName="password" label="Contraseña" [visiblePassword]="true"
+        [control]="password">
+        @if(password?.touched && password?.invalid){
+        <app-text-error-input text="Campo requerido " />
+
+        }
+      </app-input>
+
+      <label for="recordar" class="poppins-light">
+        <input type="checkbox" id="recordar" name="recordar">
+        recordar
+      </label>
+
+      <div class="flex-center">
+        <app-button type="submit" text="Iniciar session" [disabled]="!form.valid" />
+      </div>
+
+    </form>
+
+
+  </section>
+
+</main>
