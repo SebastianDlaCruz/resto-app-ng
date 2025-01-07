@@ -1,0 +1,23 @@
+@if(state){
+<app-mini-loading />
+}
+
+<header>
+  <h2 class="poppins-medium">Agregar categoría</h2>
+</header>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input label="Nombre " class="name" formControlName="name" />
+
+  <div class="container">
+    <div class="container-img">
+      <app-input-img label="Imagen" class="img" formControlName="imgFile" />
+    </div>
+
+    <button class="submit">
+      confirmar
+    </button>
+
+  </div>
+
+</form>

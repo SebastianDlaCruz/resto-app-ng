@@ -7,4 +7,49 @@ import { Component } from '@angular/core';
 })
 export class NavBarAdminComponent {
 
+
+  items = [
+
+    {
+      title: 'Platos',
+      links: [
+        {
+          name: 'Listado',
+          link: 'platos/lista'
+
+        },
+        {
+          name: 'Agregar',
+          link: 'platos/agregar'
+
+        },
+      ]
+    },
+    {
+      title: 'Categorías',
+      links: [
+        {
+          name: 'Listado',
+          link: 'categorias/lista'
+
+        },
+        {
+          name: 'Agregar',
+          link: 'categorias/agregar'
+
+        }
+      ]
+    },
+    {
+      title: 'Ventas',
+      links: [
+        {
+          name: 'Listado',
+          link: ''
+
+        },
+      ]
+    }
+
+  ]
 }

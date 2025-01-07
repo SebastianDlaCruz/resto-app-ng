@@ -1,0 +1,20 @@
+<section>
+
+  <header>
+    <h2 class="poppins-medium">Listado de platos</h2>
+
+    @if(category.length> 0){
+    <select class="poppins-regular" (change)="onSelectDishes($event)">
+      @for(cate of category; track cate.id){
+      <option [value]="cate.id" class="poppins-regular">{{cate.name}}</option>
+      }
+    </select>
+    }@else {
+    <app-line-skeleton />
+    }
+
+  </header>
+
+  <app-items-admin [items]="dishes" type="dishes"></app-items-admin>
+
+</section>

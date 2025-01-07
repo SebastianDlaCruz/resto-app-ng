@@ -4,13 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 import { StoreModule } from '@ngrx/store';
+import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { userReducer } from './core/store/reducers/user.reducer';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -18,6 +22,7 @@ import { userReducer } from './core/store/reducers/user.reducer';
     StoreModule.forRoot({ user: userReducer }),
   ],
   providers: [
+    CookieService,
     provideFirebaseApp(() => initializeApp({
       apiKey: "AIzaSyAWgLlVvKuTWC56NYBC4RqdUH9O2wUtZSY",
       authDomain: "appresetas-3a157.firebaseapp.com",
@@ -29,6 +34,7 @@ import { userReducer } from './core/store/reducers/user.reducer';
     })),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
 
   ],
   bootstrap: [AppComponent]

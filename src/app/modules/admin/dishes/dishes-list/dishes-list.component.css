@@ -1,0 +1,25 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline-start: 19px;
+}
+
+select{
+  height: 46px;
+  width: 421px;
+  border-radius: 4px;
+  padding:11px 16px;
+  color:var(--text-primary);
+  background-color: var(--background);
+  option{
+    padding: 1em;
+    font-size: 1rem;
+    color: var(--input);
+    background-color: var(--text-primary);
+  }
+}
+
+.container-skeleton{
+  width: 300px;
+}

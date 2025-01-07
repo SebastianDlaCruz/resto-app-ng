@@ -18,7 +18,6 @@ export class InputComponent implements ControlValueAccessor {
   @Input() visiblePassword = false;
   @Input() refId = "";
   @Input() placeholder = "";
-  @Input() styleCss = "";
   @Input() control?: AbstractControl<string | null, string | null> | null;
 
   readonly EYE_SLASH = heroEyeSlashSolid;
@@ -33,7 +32,7 @@ export class InputComponent implements ControlValueAccessor {
   onTouched?: () => void;
 
   writeValue(value: string): void {
-    this.value = value;
+    if (value !== undefined) { this.value = value; }
   }
   registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;

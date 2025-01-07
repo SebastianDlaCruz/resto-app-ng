@@ -1,0 +1,38 @@
+form{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.img{
+  flex:1;
+}
+.container-img{
+  width: 659px;
+}
+.submit{
+  height: 57px;
+  width: 395px;
+  padding: 0em 1em;
+  border-radius: 4px;
+  color: var(--background);
+  text-align: center;
+  font-size: 24px;
+  background-color: var(--button-primary);
+  transition: background-color 1s ease-out;
+  &:hover{
+    background-color: var(--button-secondary);
+  }
+
+  &:disabled{
+    background-color: var(--sec);
+  }
+
+}

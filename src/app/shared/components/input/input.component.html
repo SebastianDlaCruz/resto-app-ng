@@ -1,7 +1,7 @@
-<div class="poppins-regula container-input" [ngClass]="{styleCss}">
+<div class="poppins-regula container-input">
 
-  <label class="poppins-regular" [for]="refId">{{ label}}</label>
-  <input [type]="type" class="poppins-regula" [name]="refId" [id]="refId" [placeholder]="placeholder"
+  <label class="poppins-regular" [for]="refId">{{label}}</label>
+  <input [type]="type" class="poppins-regula" [name]="refId" [value]="value" [id]="refId" [placeholder]="placeholder"
     (input)="onInputChange($event)" (blur)="onTouched?.()" [ngClass]="{
       'invalid': control && control.invalid && control.touched
     }" />

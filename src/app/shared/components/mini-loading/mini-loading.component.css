@@ -1,0 +1,20 @@
+.container-loading{
+  height: 96px;
+  width: 244px;
+  padding: 2em;
+  border-radius: 2px;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  position: fixed;
+  inset-block-start: 0%;
+  inset-inline: 46%;
+  z-index: 3;
+
+  & .container-loading{
+
+    height: 60px;
+    width: 60px;
+
+  }
+
+}

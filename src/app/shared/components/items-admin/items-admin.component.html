@@ -1,0 +1,35 @@
+@if (state) {
+<app-mini-loading></app-mini-loading>
+}
+
+<app-modal-confirm #modal />
+<ul>
+
+
+  @for (item of items; track $index) {
+  <li>
+    <span class="poppins-regular">{{item.name}}</span>
+
+    <div class="flex-center container-buttons">
+      @if(type=== "dishes"){
+      <button (click)="onEditDishes(item.id)">
+        <ng-icon [svg]="pencil"></ng-icon>
+      </button>
+      }
+
+      @if(type=== "category"){
+      <button (click)="onEditCategory(item.id)">
+        <ng-icon [svg]="pencil"></ng-icon>
+      </button>
+      }
+      <button (click)="onClick(item.id)">
+        <ng-icon [svg]="trash"></ng-icon>
+      </button>
+    </div>
+  </li>
+
+  }@empty{
+  <li class="poppins-regular">Sin items</li>
+  }
+
+</ul>

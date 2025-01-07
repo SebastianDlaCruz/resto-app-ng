@@ -1,1 +1,14 @@
-<p>nav-bar-admin works!</p>
+<nav>
+  <menu>
+    @for (item of items; track item.title) {
+    <dl>
+      <dt class="poppins-medium">{{item.title}}</dt>
+      @for (link of item.links; track link.name) {
+      <dd>
+        <a [routerLink]="link.link" routerLinkActive="active" class="poppins-regular">{{link.name}}</a>
+      </dd>
+      }
+    </dl>
+    }
+  </menu>
+</nav>

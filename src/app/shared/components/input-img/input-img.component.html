@@ -1,0 +1,12 @@
+<div class="poppins-regular container-input"> <label [for]="refId">{{label}}</label>
+  <div class="container-input-img" [ngClass]="{
+    'invalid': control && control.invalid && control.touched
+  }">
+    <input #input type="file" [name]="refId" [id]="refId" accept="image/*" (change)="onInputChange(input)"
+      [class.invalid]="control?.invalid && control?.touched" />
+    <span class="placeholder poppins-regular" (click)="input.click()">{{placeholder}}</span>
+  </div>
+  <button type="button" class="icon" (click)="input.click()">
+    <ng-icon [svg]="icon"></ng-icon>
+  </button>
+</div>

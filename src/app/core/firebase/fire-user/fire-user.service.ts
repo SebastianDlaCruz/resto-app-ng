@@ -16,10 +16,11 @@ export class FireUserService {
 
   getUser(id: string): Observable<User> {
 
-    const q = query(collection(this.firestore, 'users'), where('idToken', '==', id));
+    const q = query(collection(this.firestore, 'users'), where('id', '==', id));
+
 
     return onSnapshotObserver(q).pipe(
-      map(query => query.docs[0].data() as User)
+      map(query => query.docs[0].data() as User),
     )
   }
 }

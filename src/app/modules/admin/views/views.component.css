@@ -1,0 +1,19 @@
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 106px;
+  padding-inline: var(--padding-inline);
+  background-color: var(--background);
+}
+
+.container-views{
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.container-layout{
+  padding-inline: 12px 96px;
+  flex: 5;
+}

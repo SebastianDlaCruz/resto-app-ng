@@ -13,7 +13,7 @@ export const initStateUser: User = {
   contact: 0,
   email: '',
   clarification: '',
-  type: TypeUser.USER
+  type: TypeUser.INIT
 }
 
 export const userReducer = createReducer(

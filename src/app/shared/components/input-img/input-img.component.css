@@ -1,0 +1,41 @@
+.container-input{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container-input-img{
+  position: relative;
+  height: 59px;
+  width: 100%;
+  padding-inline: 12px;
+  border-radius: 6px;
+  border: .06px solid #282828;
+  background-color: var(--text-primary);
+
+  &.invalid{
+    border: 1px solid var(--invalid);
+  }
+}
+
+input{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.placeholder{
+  position: absolute;
+  inset-block: 29%;
+  color:#BDBDBD;
+}
+
+
+
+
+.icon{
+  position: absolute;
+  inset-inline-end: 3%;
+  inset-block: 52%;
+  color:#8E8E8E;
+}

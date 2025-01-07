@@ -1,0 +1,75 @@
+.submit{
+
+    height: 57px;
+    width: 395px;
+    padding: 0em 1em;
+    border-radius: 4px;
+    color: var(--background);
+    text-align: center;
+    font-size: 24px;
+    background-color: var(--button-primary);
+    transition: background-color 1s ease-out;
+    &:hover{
+      background-color: var(--button-secondary);
+    }
+
+    &:disabled{
+      background-color: var(--sec);
+    }
+
+}
+
+.container-select{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+select{
+  height: 59px;
+  padding-inline: 12px;
+  border-radius: 6px;
+  background-color: var(--text-primary);
+  border: .06px solid #282828;
+}
+
+form{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "name name "
+    "description  description "
+    "image amount"
+    "category category"
+    "container container "
+  ;
+  padding: 1em;
+  gap: 1em;
+
+}
+.name{
+  grid-area: name;
+}
+
+.description{
+  grid-area: description;
+}
+
+.image{
+  grid-area: image;
+}
+
+.amount{
+  grid-area: amount;
+}
+.category{
+  grid-area: category;
+}
+.container{
+  grid-area: container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 103px;
+}
+

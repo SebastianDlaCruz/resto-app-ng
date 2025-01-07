@@ -14,10 +14,13 @@ export class AuthService {
     return from(signInWithEmailAndPassword(this.auth, data.email, data.password));
   }
 
-  /* createUserWithEmailAndPassword */
 
   getAuth(): User | null {
     return this.auth.currentUser;
+  }
+
+  getIdToken() {
+    return from(this.auth.currentUser?.getIdToken() ?? Promise.resolve(null));
   }
 
   singOut(): void {

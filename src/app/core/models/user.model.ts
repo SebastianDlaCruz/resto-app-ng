@@ -1,6 +1,7 @@
 export enum TypeUser {
   ADMIN = 'admin',
-  USER = 'user'
+  USER = 'user',
+  INIT = ""
 }
 
 export interface User {
