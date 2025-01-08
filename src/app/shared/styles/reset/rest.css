@@ -29,6 +29,18 @@ menu{
   margin: 0;
 }
 
+ul{
+  margin:0;
+}
 li{
   list-style: none;
+}
+
+main{
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+dialog{
+  border: none;
 }

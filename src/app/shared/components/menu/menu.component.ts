@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { MenuItems, TypeButton } from './model/menu-items.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { MenuItems, TypeButton } from './model/menu-items.model';
 })
 export class MenuComponent {
   @Input({ required: true }) items: MenuItems[] = [];
-
+  private cookieServices = inject(CookieService);
+  token = this.cookieServices.get('token');
   type = TypeButton;
 }

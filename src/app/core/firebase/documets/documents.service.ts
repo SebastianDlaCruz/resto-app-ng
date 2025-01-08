@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { collection, deleteDoc, doc, Firestore, getDoc, query, setDoc } from '@angular/fire/firestore';
+import { collection, deleteDoc, doc, Firestore, getDoc, getDocs, query, setDoc, where } from '@angular/fire/firestore';
 import { from, map, Observable } from 'rxjs';
 import { onSnapshotObserver } from '../../../shared/utils/onSnapshotObserver.util';
 
@@ -25,6 +25,16 @@ export class DocumentsService {
   getDocument(name: string, id: string) {
     const docRef = doc(this.firestore, name, id);
     return from(getDoc(docRef))
+  }
+
+
+  getDocumentById<T>(id: string) {
+    const q = query(collection(this.firestore, "dishes"), where("category", "==", id));
+
+    return from(getDocs(q)).pipe(
+      map(res => res.docs.map(item => item.data()) as T)
+    )
+
   }
 
   delete(id: string, type: string) {

@@ -11,9 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { userReducer } from './core/store/reducers/user.reducer';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [

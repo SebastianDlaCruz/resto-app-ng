@@ -10,3 +10,20 @@
     align-items: center;
   }
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+
+.button-login{
+  height: 57px;
+  width: 423px;
+}
+
+.container-button{
+  display: grid;
+  place-items: center;
+}

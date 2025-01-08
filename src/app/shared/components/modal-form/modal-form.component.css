@@ -1,0 +1,27 @@
+dialog{
+  min-height:701px ;
+  width: 505px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 80px;
+  padding-inline: 10px;
+
+  h3{
+    font-size: 31px;
+  }
+}
+
+button{
+  font-size: 19px;
+}
+
+input{
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--text-secondary);
+}

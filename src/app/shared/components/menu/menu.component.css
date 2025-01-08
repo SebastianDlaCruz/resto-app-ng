@@ -17,5 +17,16 @@
       color: var(--button-primary);
     }
   }
+
 }
 
+.button-auth{
+  padding: .7em;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+  transition: background-color 0.3s ease-out;
+
+  &:hover{
+    background-color: var(--button-secondary);
+  }
+}

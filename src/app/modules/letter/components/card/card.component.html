@@ -1,0 +1,6 @@
+@if(category){
+<a class="category" [routerLink]="['/latter/',category.name,category.id]">
+  <img [ngSrc]="category.img  " [alt]="category.name" width="300" height="366" loading="lazy">
+  <span class="poppins-medium">{{category.name}}</span>
+</a>
+}

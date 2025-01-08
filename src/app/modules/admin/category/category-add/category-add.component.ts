@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { DocumentsService } from '../../../../core/firebase/documets/documents.service';
 import { FireUpdateImgService } from '../../../../core/firebase/fire-update-img/fire-update-img.service';
@@ -16,6 +17,7 @@ export class CategoryAddComponent implements OnInit {
   state = false;
   private ds = inject(DocumentsService);
   private fuis = inject(FireUpdateImgService);
+  private router = inject(Router);
 
   category: Category[] = [];
   form = inject(FormCategoryService).getFormGroup();
@@ -41,7 +43,8 @@ export class CategoryAddComponent implements OnInit {
       })
     ).subscribe({
       next: (res) => {
-        this.state = true
+        this.state = true;
+        this.router.navigate(['admin/categorias/lista'])
       }
     })
   }

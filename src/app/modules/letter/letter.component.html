@@ -1,0 +1,17 @@
+<app-nav-bar />
+
+<main>
+
+  <ul>
+
+    @for (item of category; track item.id) {
+    <li>
+      <app-card [category]="item" />
+    </li>
+    }
+  </ul>
+
+
+</main>
+
+<app-footer />

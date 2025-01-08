@@ -1,8 +1,9 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { NgIconsModule } from '@ng-icons/core';
-import { heroPencil, heroTrash } from '@ng-icons/heroicons/outline';
+import { heroPencil, heroTrash, heroXMark } from '@ng-icons/heroicons/outline';
 import {
   heroArrowRightStartOnRectangleSolid,
   heroEyeSlashSolid,
@@ -25,6 +26,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { MenuComponent } from './menu/menu.component';
 import { MiniLoadingComponent } from './mini-loading/mini-loading.component';
 import { ModalConfirmComponent } from './modal-confirm/modal-confirm.component';
+import { ModalFormComponent } from './modal-form/modal-form.component';
 import { NavBarAdminComponent } from './nav-bar-admin/nav-bar-admin.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { QualificationComponent } from './qualification/qualification.component';
@@ -49,7 +51,8 @@ import { TextErrorInputComponent } from './text-error-input/text-error-input.com
     InputImgComponent,
     LoadingComponent,
     MiniLoadingComponent,
-    LineSkeletonComponent
+    LineSkeletonComponent,
+    ModalFormComponent
   ],
   imports: [
     CommonModule,
@@ -66,10 +69,12 @@ import { TextErrorInputComponent } from './text-error-input/text-error-input.com
       heroEyeSolid,
       heroPencil,
       heroTrash,
-      ionImage
+      ionImage,
+      heroXMark
     }),
     RouterLink,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ],
   exports: [
     CardPlateComponent,
@@ -89,7 +94,8 @@ import { TextErrorInputComponent } from './text-error-input/text-error-input.com
     InputImgComponent,
     LoadingComponent,
     MiniLoadingComponent,
-    LineSkeletonComponent
+    LineSkeletonComponent,
+    ModalFormComponent
   ]
 })
 export class ComponentsModule { }

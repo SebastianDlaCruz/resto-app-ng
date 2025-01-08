@@ -10,6 +10,10 @@ input{
   padding-inline: 12px;
   border-radius: 6px;
   border: .06px solid #282828;
+  font-family: "Poppins", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--text-secondary);
 }
 
 

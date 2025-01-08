@@ -1,5 +1,7 @@
 <header class="nav-bar">
-  <app-icon-main />
+  <a routerLink="/">
+    <app-icon-main />
+  </a>
   <div class="nav-bar__container">
     <app-menu [items]="items" />
     <button>
@@ -7,3 +9,30 @@
     </button>
   </div>
 </header>
+
+<app-modal-form #login title="Iniciar session">
+  <form [formGroup]="form" (ngSubmit)="onSubmitLogin()">
+    <app-input label="Correo" formControlName="email" refId="email" [control]="control('email')" />
+    <app-input label="Contraseña" formControlName="password" [visiblePassword]="true" refId="password"
+      [control]="control('password')" />
+    <div class="container-button">
+      <button class="button poppins-semibold button-login">Iniciar session</button>
+    </div>
+  </form>
+</app-modal-form>
+
+
+<app-modal-form #register title="Registrase">
+  <form [formGroup]="form" (ngSubmit)="onSubmitLogin()">
+    <app-input label="Correo" formControlName="email" refId="email" [control]="control('email')" />
+    <app-input label="Nombre" formControlName="email" refId="email" [control]="control('email')" />
+    <app-input label="Contraseña" formControlName="password" [visiblePassword]="true" refId="password"
+      [control]="control('password')" />
+    <app-input label="Confirmar contraseña" formControlName="password" [visiblePassword]="true" refId="password"
+      [control]="control('password')" />
+
+    <div class="container-button">
+      <button class="button poppins-semibold button-login">Iniciar session</button>
+    </div>
+  </form>
+</app-modal-form>
