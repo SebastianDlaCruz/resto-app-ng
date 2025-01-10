@@ -1,0 +1,32 @@
+<section class="cart" [ngClass]="{'active':stateCart}">
+
+  <button class="x-mark" (click)="onClose()">
+    <ng-icon [svg]="xMarkIcon"></ng-icon>
+  </button>
+
+  <header>
+    <h2 class="poppins-regular">Mi pedido</h2>
+    <ng-icon [svg]="cartIcon" class="title-icon"></ng-icon>
+  </header>
+
+
+  <div>
+
+    <app-item-cart />
+
+  </div>
+
+
+  <footer>
+
+    <strong class="flex-center">
+      <span class="poppins-medium">Subtotal</span>
+      <span class="poppins-medium">$1200</span>
+    </strong>
+
+    <div>
+      <button class="button poppins-medium">Confirmar</button>
+      <a class="poppins-medium" routerLink="/latter">Seguir comprando</a>
+    </div>
+  </footer>
+</section>

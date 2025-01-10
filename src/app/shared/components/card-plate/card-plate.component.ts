@@ -8,4 +8,8 @@ import { Dishes } from '../../../core/models';
 })
 export class CardPlateComponent {
   @Input({ required: true }) dish?: Dishes;
+
+  onAdd() {
+
+  }
 }

@@ -1,4 +1,4 @@
-h3,p,strong{
+h2,p,strong{
   color: var(--background);
 }
 
@@ -7,25 +7,33 @@ h3,p,strong{
   width: 364px;
   border-radius: 20px;
   background-color: var(--text-primary);
-
+  text-align: center;
 }
 
 .card-plate__header{
   position: relative;
-  height: 287px;
+  height: 233px;
+
 
   & .card-plate__header-container-img{
     --size: 240px;
     position: absolute;
-    inset-block-start: -12px;
+    inset-block-start: -28px;
+    inset-inline: calc(50% - 120px);
     height: var(--size);
     width: var(--size);
     border-radius: 50%;
+
+
+    & img{
+      border-radius: inherit;
+    }
   }
 
   & .card-plate__title{
     font-size: 28px;
     line-height: 36.79px;
+
   }
 }
 
@@ -40,7 +48,7 @@ h3,p,strong{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap:3px;
+  gap: 12px;
 
   & strong{
     font-weight: 600;

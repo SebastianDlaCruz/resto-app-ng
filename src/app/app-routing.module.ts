@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
   },
+  {
+    path: 'dish/:id',
+    loadChildren: () => import('./modules/dish/dish.module').then(m => m.DishModule)
+  },
 
   {
     path: '**',

@@ -1,6 +1,18 @@
 .qualification{
   position: absolute;
-  top: 1%;
+  inset-block-end: 1%;
+  inset-inline: calc(50% - 42px);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 47.72px;
+  width: 84.7px;
+  border-radius: 50px;
   color: var(--text-primary);
   background: linear-gradient(0deg, rgba(11,11,11,1) 33%, rgba(50,50,50,1) 100%);
+
+  & .qualification__icon{
+    line-height: 12px;
+    color: var(--button-primary);
+  }
 }

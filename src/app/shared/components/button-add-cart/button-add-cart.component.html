@@ -1,4 +1,6 @@
-<button class="flex-center button-add-cart">
-  <span>{{paragraph}}</span>
-  <ng-icon [svg]="shoppingCart"></ng-icon>
+<button class="flex-center button-add-cart" (click)="click()">
+  <span class="poppins-medium">{{paragraph}}</span>
+  <span>
+    <ng-icon [svg]="shoppingCart"></ng-icon>
+  </span>
 </button>

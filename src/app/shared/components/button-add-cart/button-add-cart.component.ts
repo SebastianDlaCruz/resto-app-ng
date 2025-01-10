@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { heroShoppingCartSolid } from '@ng-icons/heroicons/solid';
 //TODO: COMPONENTE BOTON PARA AGREGAR ITEMS AL CARRITO
 
@@ -9,6 +10,13 @@ import { heroShoppingCartSolid } from '@ng-icons/heroicons/solid';
 })
 export class ButtonAddCartComponent {
 
+  private router = inject(Router);
   @Input({ required: true }) paragraph: string = "";
+  @Output() onClick = new EventEmitter<void>();
   shoppingCart = heroShoppingCartSolid;
+
+  click() {
+    this.onClick.emit();
+  }
+
 }

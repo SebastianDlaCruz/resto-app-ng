@@ -19,9 +19,3 @@ button{
   font-size: 19px;
 }
 
-input{
-  font-family: "Poppins", serif;
-  font-weight: 300;
-  font-style: normal;
-  color: var(--text-secondary);
-}

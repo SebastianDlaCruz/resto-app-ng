@@ -13,11 +13,12 @@ export class ViewDishComponent implements OnInit {
   private docs = inject(DocumentsService);
   private id = this.routes.snapshot.params['id'];
   name = this.routes.snapshot.params['title'];
+  dishes: Dishes[] = [];
 
   ngOnInit(): void {
-    this.docs.getDocumentById<Dishes[]>(this.id).subscribe({
+    this.docs.getDocumentById<Dishes[]>(this.id, 'category').subscribe({
       next: (res) => {
-        console.log('res', res)
+        this.dishes = res;
       }
     })
   }

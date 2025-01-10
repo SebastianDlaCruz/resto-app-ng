@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgIconsModule } from '@ng-icons/core';
 import { heroMagnifyingGlassSolid } from '@ng-icons/heroicons/solid';
 import { ComponentsModule } from '../../shared/components/components.module';
+import { LetterModule } from "../letter/letter.module";
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { UserComponent } from './components/user/user.component';
@@ -23,7 +24,8 @@ import { HomeComponent } from './home.component';
     HomeRoutingModule,
     ComponentsModule,
     NgIconsModule.withIcons({ heroMagnifyingGlassSolid }),
-    NgOptimizedImage
+    NgOptimizedImage,
+    LetterModule
   ],
   exports: [HomeComponent]
 })

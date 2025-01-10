@@ -1,13 +1,18 @@
 .button-add-cart{
+  gap: 4px;
   height: 55px;
+  width: 289px;
+  border-radius: 4px;
   color: var(--background);
   background-color: var(--button-primary);
   transition: background-color 1s ease-out;
+
   & span{
     width: fit-content;
+    font-size: 1.2rem;
   }
 
   &:hover{
-    background-color: var(---button-secondary);
+    background-color: var(--button-secondary);
   }
 }

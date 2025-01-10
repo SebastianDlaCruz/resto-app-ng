@@ -28,8 +28,8 @@ export class DocumentsService {
   }
 
 
-  getDocumentById<T>(id: string) {
-    const q = query(collection(this.firestore, "dishes"), where("category", "==", id));
+  getDocumentById<T>(id: string, name: string) {
+    const q = query(collection(this.firestore, "dishes"), where(name, "==", id));
 
     return from(getDocs(q)).pipe(
       map(res => res.docs.map(item => item.data()) as T)

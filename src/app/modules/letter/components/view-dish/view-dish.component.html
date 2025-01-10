@@ -1,12 +1,18 @@
 <app-nav-bar />
 
 <main>
-
   <section>
     <header>
       <h2 class="poppins-medium"> Conoce nuestras mejores {{name.toLowerCase()}} </h2>
     </header>
   </section>
+
+  <div class="container-dish">
+    @for (dish of dishes; track $index) {
+    <app-card-plate [dish]="dish" />
+    }
+  </div>
+
 </main>
 
 <app-footer />

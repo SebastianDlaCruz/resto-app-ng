@@ -15,6 +15,8 @@ import { ionImage, ionLocationOutline, ionLogoFacebook, ionLogoTwitter, ionLogoW
 import { ButtonAddCartComponent } from './button-add-cart/button-add-cart.component';
 import { ButtonComponent } from './button/button.component';
 import { CardPlateComponent } from './card-plate/card-plate.component';
+import { CartComponent } from './cart/cart.component';
+import { ItemCartComponent } from './cart/components/item-cart/item-cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { IconMainComponent } from './icon-main/icon-main.component';
 import { InputImgComponent } from './input-img/input-img.component';
@@ -52,7 +54,9 @@ import { TextErrorInputComponent } from './text-error-input/text-error-input.com
     LoadingComponent,
     MiniLoadingComponent,
     LineSkeletonComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    CartComponent,
+    ItemCartComponent
   ],
   imports: [
     CommonModule,
@@ -95,7 +99,9 @@ import { TextErrorInputComponent } from './text-error-input/text-error-input.com
     LoadingComponent,
     MiniLoadingComponent,
     LineSkeletonComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    CartComponent,
+    ItemCartComponent
   ]
 })
 export class ComponentsModule { }

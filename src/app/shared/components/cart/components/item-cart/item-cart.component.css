@@ -1,0 +1,16 @@
+article{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+
+  div{
+    gap: 9px;
+  }
+
+  .icon-trash{
+    font-size: 19px;
+    color: var(--button-primary);
+  }
+
+}

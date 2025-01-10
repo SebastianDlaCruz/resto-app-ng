@@ -8,10 +8,8 @@
 
   @if (item.type === type.BUTTON) {
 
-
-
   @if(item.icon){
-  @if(token !== ''){
+  @if(getToken() !== ''){
 
   <li>
     <button (click)="item?.action()">
@@ -22,7 +20,7 @@
   }
   }
 
-  @if (token === '' && !item.icon) {
+  @if (getToken() === '' && !item.icon) {
   <li>
     <button (click)="item?.action()" class="button-auth poppins-medium">{{ item.name }}</button>
   </li>

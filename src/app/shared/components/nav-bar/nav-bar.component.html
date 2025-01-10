@@ -4,7 +4,7 @@
   </a>
   <div class="nav-bar__container">
     <app-menu [items]="items" />
-    <button>
+    <button (click)="onOpen()">
       <ng-icon [svg]="shoppingCart" class="icon"></ng-icon>
     </button>
   </div>
@@ -16,23 +16,24 @@
     <app-input label="Contraseña" formControlName="password" [visiblePassword]="true" refId="password"
       [control]="control('password')" />
     <div class="container-button">
-      <button class="button poppins-semibold button-login">Iniciar session</button>
+      <button class="button poppins-semibold button-login" [disabled]="!form.valid">Iniciar session</button>
     </div>
   </form>
 </app-modal-form>
 
 
 <app-modal-form #register title="Registrase">
-  <form [formGroup]="form" (ngSubmit)="onSubmitLogin()">
-    <app-input label="Correo" formControlName="email" refId="email" [control]="control('email')" />
-    <app-input label="Nombre" formControlName="email" refId="email" [control]="control('email')" />
-    <app-input label="Contraseña" formControlName="password" [visiblePassword]="true" refId="password"
-      [control]="control('password')" />
-    <app-input label="Confirmar contraseña" formControlName="password" [visiblePassword]="true" refId="password"
-      [control]="control('password')" />
+  <form [formGroup]="formRegister" (ngSubmit)="onSubmitRegister()">
+    <app-input label="Correo" formControlName="emailRegister" refId="emailRegister"
+      [control]="controlRegister('emailRegister')" />
+    <app-input label="Nombre" formControlName="name" refId="name" [control]="controlRegister('name')" />
+    <app-input label="Contraseña" formControlName="passwordRegister" [visiblePassword]="true" refId="passwordRegister"
+      [control]="controlRegister('passwordRegister')" />
+    <app-input label="Confirmar contraseña" formControlName="validatePassword" [visiblePassword]="true"
+      refId="validatePassword" [control]="controlRegister('validatePassword')" />
 
     <div class="container-button">
-      <button class="button poppins-semibold button-login">Iniciar session</button>
+      <button class="button poppins-semibold button-login" [disabled]="!formRegister.valid">Registrarse</button>
     </div>
   </form>
 </app-modal-form>

@@ -9,7 +9,10 @@ import { StoreModule } from '@ngrx/store';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { cartStateReducer } from './core/store/reducers/cart-state.reducer';
+import { cartReducer } from './core/store/reducers/cart.reducer';
 import { userReducer } from './core/store/reducers/user.reducer';
+import { LetterModule } from "./modules/letter/letter.module";
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { userReducer } from './core/store/reducers/user.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ user: userReducer }),
+    StoreModule.forRoot({ user: userReducer, cart: cartReducer, cartState: cartStateReducer }),
+    LetterModule
   ],
   providers: [
     CookieService,
