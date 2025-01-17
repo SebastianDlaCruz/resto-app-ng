@@ -11,9 +11,9 @@
 
 
   <div>
-
-    <app-item-cart />
-
+    @for (dish of dishes; track dish.id) {
+    <app-item-cart [dish]="dish" />
+    }
   </div>
 
 
@@ -21,7 +21,7 @@
 
     <strong class="flex-center">
       <span class="poppins-medium">Subtotal</span>
-      <span class="poppins-medium">$1200</span>
+      <span class="poppins-medium">${{total}}</span>
     </strong>
 
     <div>

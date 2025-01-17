@@ -1,31 +1,38 @@
-<section>
-
-  <div>
-
-    <img src="" alt="">
-
+@if(dish){
+<section class="details">
+  <div class="details-container-img">
+    <img [src]="dish.img" [alt]="dish.name" class="details__img">
   </div>
 
-  <article>
-    <header>
-      <h2>nombre</h2>
-      <span>4.3</span>
+  <article class="details-article">
+    <header class="details-article__header">
+      <h2 class="poppins-medium">{{dish.name}}</h2>
+      <div class="container-icon">
+        <ng-icon [svg]="startIcon" class="details__start"></ng-icon>
+        <span>{{dish.qualification}}</span>
+      </div>
     </header>
 
     <section>
-      <h3>Descripción del plato</h3>
-      <p></p>
-      <p></p>
+      <h5 class="poppins-medium text-style-secondary">Descripción del plato</h5>
+      <p class="poppins-light">{{dish.description}}</p>
+      <p class="poppins-medium delay-minutes">15 A 20 Min de demora</p>
+      <strong class="poppins-medium mount">${{dish.amount}}</strong>
     </section>
+
+    <footer class="details-article__footer">
+      <p class="poppins-medium text-style-secondary">Unidades</p>
+      <div class="container-options">
+        <app-button-units />
+        <button class="button button-add-cart" (click)="onAddCart(dish)">
+          <span class="poppins-medium">agregar al carrito</span>
+          <ng-icon [svg]="shoppingIcon" class="button-add-cart__icon"></ng-icon>
+        </button>
+      </div>
+    </footer>
+
   </article>
 
-  <footer>
-    <strong>$1200</strong>
-    <div>
-      <b>Unidades</b>
-      <button>agredar al carrtido</button>
-    </div>
-  </footer>
-
-
 </section>
+
+}

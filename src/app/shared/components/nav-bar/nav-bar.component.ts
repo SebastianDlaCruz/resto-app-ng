@@ -96,6 +96,7 @@ export class NavBarComponent {
         res.user.getIdToken().then(token => {
           this.cookie.set('token', token);
           this.token$.setToken('token');
+          this.cookie.set('type', TypeUser.USER);
           this.login?.close();
         })
       },
@@ -161,7 +162,8 @@ export class NavBarComponent {
 
 
   onOpen() {
-    this.store.dispatch(toggle())
+    console.log('click')
+    this.store.dispatch(toggle());
   }
 
 }

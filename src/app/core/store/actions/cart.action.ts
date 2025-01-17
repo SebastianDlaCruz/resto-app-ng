@@ -14,7 +14,4 @@ export const addData = createAction('[Cart Component],AddData',
   props<{ id: string, idUser: string }>()
 )
 
-export const totalDishes = createAction('[Cart Component],Total',
-  props<{ total: number }>()
-)
 

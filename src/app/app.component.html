@@ -1,1 +1,9 @@
+@if( type === typeUser.INIT || (type === typeUser.USER || type !== typeUser.ADMIN) ){
+<app-nav-bar />
+<app-cart />
+}
 <router-outlet></router-outlet>
+
+@if(type === typeUser.USER || type === typeUser.INIT){
+<app-footer />
+}

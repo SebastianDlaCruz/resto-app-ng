@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Dishes } from '../../../core/models';
 
 @Component({
@@ -7,9 +8,11 @@ import { Dishes } from '../../../core/models';
   styleUrl: './card-plate.component.css'
 })
 export class CardPlateComponent {
+
   @Input({ required: true }) dish?: Dishes;
+  private router = inject(Router);
 
-  onAdd() {
-
+  onAdd(id: string) {
+    this.router.navigate(['/dish', id]);
   }
 }

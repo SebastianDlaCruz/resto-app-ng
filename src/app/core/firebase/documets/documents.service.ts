@@ -28,13 +28,19 @@ export class DocumentsService {
   }
 
 
-  getDocumentById<T>(id: string, name: string) {
-    const q = query(collection(this.firestore, "dishes"), where(name, "==", id));
-
+  getDocumentById<T>(id: string, name: string, nameCollection: string) {
+    const q = query(collection(this.firestore, nameCollection), where(name, "==", id));
     return from(getDocs(q)).pipe(
-      map(res => res.docs.map(item => item.data()) as T)
+      map(dish => dish.docs[0].data() as T)
     )
+  }
 
+
+  getDocumentsById<T>(id: string, name: string, nameCollection: string) {
+    const q = query(collection(this.firestore, nameCollection), where(name, "==", id));
+    return from(getDocs(q)).pipe(
+      map(res => res.docs.map(item => item.data()) as T),
+    )
   }
 
   delete(id: string, type: string) {

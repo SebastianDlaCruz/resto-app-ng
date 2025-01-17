@@ -1,14 +1,14 @@
+@if(dish){
 <article>
-
   <div class="flex-center">
-    <p class="poppins-regular">cantidad</p>
-    <p class="poppins-regular">nombre</p>
+    <p class="poppins-regular">{{dish.count}}</p>
+    <p class="poppins-regular">{{dish.dishes.name}}</p>
   </div>
-
   <div class="flex-center">
-    <p class="poppins-regular">$1020</p>
-    <button class="icon-trash">
+    <p class="poppins-regular">${{dish.dishes.amount * dish.count}}</p>
+    <button class="icon-trash" (click)="onDelete(dish.id)">
       <ng-icon [svg]="iconTrash"></ng-icon>
     </button>
   </div>
 </article>
+}

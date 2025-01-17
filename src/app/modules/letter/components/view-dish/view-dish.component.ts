@@ -16,7 +16,7 @@ export class ViewDishComponent implements OnInit {
   dishes: Dishes[] = [];
 
   ngOnInit(): void {
-    this.docs.getDocumentById<Dishes[]>(this.id, 'category').subscribe({
+    this.docs.getDocumentsById<Dishes[]>(this.id, 'category', 'dishes').subscribe({
       next: (res) => {
         this.dishes = res;
       }

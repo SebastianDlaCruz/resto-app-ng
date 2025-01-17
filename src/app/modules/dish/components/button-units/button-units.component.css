@@ -1,0 +1,10 @@
+.container-units{
+  height: 45px;
+  width: 61px;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+  span{
+    color: var(--background);
+  }
+}
+
