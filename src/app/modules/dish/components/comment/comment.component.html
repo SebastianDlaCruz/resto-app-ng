@@ -1,7 +1,14 @@
-<section>
-  <header>
-    <h4>Nombre</h4>
-    <span>calificacion</span>
-    <span>date</span>
+@if (comment) {
+<section class="comment">
+  <header class="comment-header">
+    <h4 class="poppins-semibold">{{comment.username}}</h4>
+    @for (start of qualification; track $index) {
+    <ng-icon [svg]="startIcon" class="start"></ng-icon>
+    }
+    <span class="poppins-light date">{{comment.date | date:'d \'de\' MMM \'del\' yyyy HH:mm \'Hs\''}}</span>
   </header>
+
+  <p class="poppins-light">{{comment.comment}}</p>
+
 </section>
+}

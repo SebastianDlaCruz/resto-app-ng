@@ -1,22 +1,27 @@
 <section>
 
-  <form>
-
-    <header>
-      <h2>Calificación</h2>
-      <!-- <app-qualification /> -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <header class="header-title">
+      <h2 class="poppins-medium">Calificación</h2>
+      <app-qualification-form formControlName="qualification" />
     </header>
 
-    <app-input label="Déjanos tu comentario" />
+    <app-input label="Déjanos tu comentario" formControlName="comment" />
+
+    <button class="button send poppins-medium" [disabled]="!form.valid">Enviar</button>
 
   </form>
 
   <article>
     <header>
-      <h3>Nuestros clientes</h3>
+      <h3 class="poppins-medium">Nuestros clientes</h3>
     </header>
 
-    <app-comment />
+    <div class="container-comments">
+      @for (comment of comments; track comment.id) {
+      <app-comment [comment]="comment" />
+      }
+    </div>
 
   </article>
 

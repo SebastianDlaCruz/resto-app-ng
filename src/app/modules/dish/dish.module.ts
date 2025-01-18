@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgIconsModule } from '@ng-icons/core';
 import { heroMinusSmall, heroPlusSmall, heroStar } from '@ng-icons/heroicons/outline';
 import { heroShoppingCartSolid, heroStarSolid } from '@ng-icons/heroicons/solid';
@@ -10,6 +11,7 @@ import { ButtonUnitsComponent } from './components/button-units/button-units.com
 import { CommentComponent } from './components/comment/comment.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { DetailsComponent } from './components/details/details.component';
+import { QualificationFormComponent } from './components/qualification-form/qualification-form.component';
 import { DishRoutingModule } from './dish-routing.module';
 import { DishComponent } from './dish.component';
 
@@ -18,15 +20,16 @@ import { DishComponent } from './dish.component';
     DishComponent,
     DetailsComponent,
     CommentsComponent,
-    /*     QualificationComponent, */
     CommentComponent,
-    ButtonUnitsComponent
+    ButtonUnitsComponent,
+    QualificationFormComponent
   ],
   imports: [
     CommonModule,
     DishRoutingModule,
     ComponentsModule,
     LetterModule,
+    ReactiveFormsModule,
     NgIconsModule.withIcons({ heroStarSolid, heroStar, heroPlusSmall, heroMinusSmall, heroShoppingCartSolid })
 
   ],

@@ -11,6 +11,7 @@ import { CartState } from '../../../core/models/cart-state.model';
 import { AuthFormService } from '../../../core/services/auth-form/auth-form.service';
 import { TokenService } from '../../../core/services/token/token.service';
 import { toggle } from '../../../core/store/actions/cart-state-action';
+import { initAuth } from '../../../core/store/actions/user.action';
 import { MenuItems, TypeButton } from '../menu/model/menu-items.model';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
 
@@ -99,6 +100,25 @@ export class NavBarComponent {
           this.cookie.set('type', TypeUser.USER);
           this.login?.close();
         })
+
+        this.docs.getDocumentById<User>(res.user.uid, 'id', 'users').subscribe({
+          next: (value) => {
+            this.store.dispatch(initAuth({
+              user: {
+                email: res.user.email ?? '',
+                name: value.userName,
+                type: value.type
+              }
+            }));
+
+            this.cookie.set('user', JSON.stringify({
+              email: res.user.email ?? '',
+              name: value.userName,
+              type: value.type
+            }))
+          }
+        })
+
       },
       error: () => {
 

@@ -1,0 +1,17 @@
+.container-start{
+  display: flex;
+  align-items: center;
+}
+
+.button-start{
+  font-size: 1.7rem;
+
+  &:hover{
+    color: var(--button-primary);
+  }
+
+  &.active{
+    color: var(--button-primary);
+  }
+}
+

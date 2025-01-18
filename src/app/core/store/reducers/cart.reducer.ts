@@ -15,6 +15,8 @@ let total = 0;
 export const cartReducer = createReducer(
   initStateCart,
   on(addDish, (state, { dish }) => {
+
+
     const updatedDishes = [...state.dishes, dish];
     const newTotal = updatedDishes.reduce((acc, currentDish) => acc + (currentDish.count * currentDish.dishes.amount), 0);
 

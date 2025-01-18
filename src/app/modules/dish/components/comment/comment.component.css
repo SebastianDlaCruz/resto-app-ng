@@ -1,0 +1,20 @@
+.comment-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.start{
+  color: var(--button-primary);
+}
+
+.date{
+  font-size: 10px;
+  color:var(--text-secondary);
+}
+
+
+p{
+  font-size: 12px;
+}

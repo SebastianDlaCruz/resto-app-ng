@@ -1,0 +1,7 @@
+<div class="container-start">
+  @for (item of [1,2,3,4,5]; track $index) {
+  <button type="button" (click)="onClick(item)" class="button-start" [ngClass]="{'active': $index  + 1  === value }">
+    <ng-icon [svg]="startIcon"></ng-icon>
+  </button>
+  }
+</div>
