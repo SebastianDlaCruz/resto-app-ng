@@ -1,6 +1,10 @@
 @if(category){
 <a class="category" [routerLink]="['/latter/',category.name,category.id]">
-  <img [ngSrc]="category.img  " [alt]="category.name" width="300" height="366" loading="lazy">
+  <img [ngSrc]="category.img  " [alt]="category.name" width="300" height="366" priority>
   <span class="poppins-medium">{{category.name}}</span>
 </a>
+}
+
+@if(category === null){
+<div class="skeleton container-category"></div>
 }

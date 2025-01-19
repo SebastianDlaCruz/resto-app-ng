@@ -1,0 +1,23 @@
+main{
+  padding-inline: var(--padding-inline);
+  padding-block: 28px;
+  background-color: var(--background-secondary);
+}
+
+header{
+  border-bottom: 1px solid var(--text-primary);
+}
+
+
+.container-layout{
+  display: flex;
+  height: 100vh;
+  .my-data{
+    flex:1;
+  }
+
+  .outlet{
+    flex: 5;
+    padding: 1em  3em;
+  }
+}

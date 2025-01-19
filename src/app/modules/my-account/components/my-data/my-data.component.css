@@ -1,0 +1,63 @@
+form{
+  display: grid;
+  grid-template-areas:
+  "username username"
+  "code localidad"
+  "calle number-piso "
+  "contact email"
+  "aclaracion aclaracion"
+  ". button-submit "
+  ;
+  grid-template-columns: 1fr 1fr ;
+  gap: 10px;
+}
+
+.username{
+  grid-area: username;
+}
+
+.code{
+  grid-area: code;
+}
+
+.localidad{
+  grid-area: localidad;
+}
+
+.calle{
+  grid-area: calle;
+}
+
+.number-piso{
+  grid-area: number-piso;
+  display: flex;
+  width: 300px;
+}
+
+.number, .piso{
+  width: 221px;
+}
+
+
+
+.contact{
+  grid-area: contact;
+}
+
+.email{
+  grid-area: email;
+}
+
+
+.aclaracion{
+  grid-area: aclaracion;
+}
+
+.button-submit{
+  grid-area: button-submit;
+  justify-self: right;
+  width: 228px;
+  height: 50px;
+  border-radius: 4px;
+
+}

@@ -1,0 +1,12 @@
+nav{
+  height: 100%;
+  border-right: 1px solid var(--text-primary);
+}
+
+menu{
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  height: inherit;
+  padding: 2.7em 0;
+}

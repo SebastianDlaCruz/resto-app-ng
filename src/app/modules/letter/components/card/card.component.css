@@ -28,4 +28,12 @@
   &:hover{
     transform: scale(107%);
   }
+
+
+}
+
+.container-category{
+  height: 366px;
+  width: 300px;
+  border-radius: 20px;
 }

@@ -44,3 +44,15 @@ main{
 dialog{
   border: none;
 }
+
+menu li > a {
+  color: var(--text-primary);
+  transition: color 0.3s ease-out;
+  &:hover{
+    color: var(--button-secondary);
+  }
+
+  &.active{
+    color: var(--button-primary);
+  }
+}

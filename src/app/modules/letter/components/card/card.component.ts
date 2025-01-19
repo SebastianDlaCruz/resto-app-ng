@@ -8,6 +8,6 @@ import { Category } from '../../../../core/models';
 })
 export class CardComponent {
 
-  @Input() category?: Category;
+  @Input() category: Category | null = null;
 
 }

@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'dish/:id',
     loadChildren: () => import('./modules/dish/dish.module').then(m => m.DishModule)
   },
+  {
+    path: 'my-account',
+    loadChildren: () => import('./modules/my-account/my-account.module').then(m => m.MyAccountModule)
+  },
 
   {
     path: '**',

@@ -58,7 +58,7 @@ export class NavBarComponent {
     },
     {
       name: 'Mi cuenta',
-      link: '/about-me',
+      link: '/my-account',
       type: TypeButton.LINK
     }, {
       name: '',
