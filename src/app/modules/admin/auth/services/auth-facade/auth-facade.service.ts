@@ -8,7 +8,7 @@ import { AuthService } from '../../../../../core/firebase/auth/auth.service';
 import { FireUserService } from '../../../../../core/firebase/fire-user/fire-user.service';
 import { User } from '../../../../../core/models';
 import { AuthProperties } from '../../../../../core/models/auth.model';
-import { init } from '../../../../../core/store/actions/user.action';
+import { update } from '../../../../../core/store/actions/user.action';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class AuthFacadeService {
       {
         next: (res) => {
           this.cookieService.set('type', res.type);
-          this.store.dispatch(init({
+          this.store.dispatch(update({
             user: res
           }));
           this.setToken();

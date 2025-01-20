@@ -18,6 +18,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() visiblePassword = false;
   @Input() refId = "";
   @Input() placeholder = "";
+  @Input() disabled = false;
   @Input() control?: AbstractControl<string | null, string | null> | null;
 
   readonly EYE_SLASH = heroEyeSlashSolid;

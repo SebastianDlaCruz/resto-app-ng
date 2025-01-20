@@ -39,6 +39,7 @@ export class NavBarComponent {
   private token$ = inject(TokenService);
   private store: Store<CartState> = inject(Store);
 
+
   shoppingCart = heroShoppingCartSolid;
   items: MenuItems[] = [
     {
@@ -64,9 +65,10 @@ export class NavBarComponent {
       name: '',
       action: () => {
         this.auth.singOut();
-        this.cookie.delete('token');
+        this.token$.clear();
         this.cookie.delete('type');
-        this.token$.setToken('');
+        this.cookie.delete('user');
+
       },
       type: TypeButton.BUTTON,
       icon: heroArrowRightStartOnRectangleSolid
@@ -92,38 +94,36 @@ export class NavBarComponent {
   }
 
   onSubmitLogin() {
-    this.auth.singIn(this.form.value).subscribe({
-      next: (res) => {
+
+    this.auth.singIn(this.form.value).pipe(
+      switchMap(res => {
         res.user.getIdToken().then(token => {
           this.cookie.set('token', token);
-          this.token$.setToken('token');
+          this.token$.setToken(token);
           this.cookie.set('type', TypeUser.USER);
           this.login?.close();
         })
 
-        this.docs.getDocumentById<User>(res.user.uid, 'id', 'users').subscribe({
-          next: (value) => {
-            this.store.dispatch(initAuth({
-              user: {
-                email: res.user.email ?? '',
-                name: value.userName,
-                type: value.type
-              }
-            }));
+        return this.docs.getDocumentById<User>(res.user.uid, 'id', 'users')
+      })
+    ).subscribe({
+      next: (value) => {
 
-            this.cookie.set('user', JSON.stringify({
-              email: res.user.email ?? '',
-              name: value.userName,
-              type: value.type
-            }))
-          }
-        })
+        const user = {
+          id: value.id,
+          email: value.email,
+          name: value.userName,
+          type: value.type
+        }
 
-      },
-      error: () => {
+        this.store.dispatch(initAuth({
+          user
+        }));
 
+        this.cookie.set('user', JSON.stringify(user))
       }
     })
+
   }
 
 
@@ -182,7 +182,6 @@ export class NavBarComponent {
 
 
   onOpen() {
-    console.log('click')
     this.store.dispatch(toggle());
   }
 

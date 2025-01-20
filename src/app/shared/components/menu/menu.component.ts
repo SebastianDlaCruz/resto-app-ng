@@ -1,5 +1,4 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { TokenService } from '../../../core/services/token/token.service';
 import { MenuItems, TypeButton } from './model/menu-items.model';
 
@@ -11,15 +10,15 @@ import { MenuItems, TypeButton } from './model/menu-items.model';
 export class MenuComponent implements OnInit {
   @Input({ required: true }) items: MenuItems[] = [];
   type = TypeButton;
-  private cookieServices = inject(CookieService);
+
   private token$ = inject(TokenService);
+  token = "";
 
   ngOnInit(): void {
-    const token = this.cookieServices.get('token');
-    this.token$.setToken(token);
+    this.token$.getToken().subscribe(res => {
+      this.token = res;
+    });
   }
 
-  getToken() {
-    return this.token$.getToken();
-  }
+
 }

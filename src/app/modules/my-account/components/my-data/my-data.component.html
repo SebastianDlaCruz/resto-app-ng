@@ -1,17 +1,18 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-  <app-input label="Nombre y apellido" class="username" />
-  <app-input label="Codigo postal" class="code" />
-  <app-input label="Localidad" class="locality" />
-  <app-input label="Calle" class="calle" />
+  <app-input label="Nombre y apellido" class="username" formControlName="userName" />
+  <app-input label="Codigo postal" class="code" formControlName="zipCode" />
+  <app-input label="Localidad" class="locality" formControlName="locality" />
+  <app-input label="Calle" class="street" formControlName="street" />
   <div class="number-piso">
-    <app-input label="Numero" class="number" />
-    <app-input label="Piso" class="piso" />
+    <app-input label="Numero" class="number" formControlName="number" />
+    <app-input label="Piso" class="floor" formControlName="floor" />
 
   </div>
-  <app-input label="Contacto" class="contact" />
-  <app-input label="Correo electronico" class="email" />
-  <app-input label="Aclaracion (opcional)" class="aclaracion" />
+  <app-input label="Contacto" class="contact" formControlName="contact" />
+  <app-input label="Correo electronico" class="email" formControlName="email" [disabled]="true" />
+  <app-input label="Aclaracion (opcional)" class="clarification" formControlName="clarification" />
 
-  <button class="button button-submit poppins-semibold">Guardar</button>
+  <button class="button button-submit poppins-semibold" [disabled]="!form.valid">Guardar</button>
+
 </form>

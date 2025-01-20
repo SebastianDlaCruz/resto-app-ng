@@ -11,10 +11,21 @@ export class TokenService {
   private cookie = inject(CookieService);
 
   setToken(token: string) {
+    this.cookie.set('token', token);
     this.token$.next(token);
   }
 
   getToken() {
-    return this.token$.value;
+
+    const value = this.cookie.get('token');
+    this.token$.next(value);
+
+    return this.token$.asObservable();
   }
+
+  clear() {
+    this.token$.next("");
+    this.cookie.delete('token');
+  }
+
 }
