@@ -1,8 +1,8 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { forkJoin } from 'rxjs';
 import { DocumentsService } from '../../../../core/firebase/documets/documents.service';
-import { User } from '../../../../core/models';
+import { UserDataService } from '../../../../core/services/user-data/user-data.service';
 import { generateUUid } from '../../../../shared/utils/generate-uuid.util';
 import { Comment } from '../../models/coment.model';
 @Component({
@@ -13,7 +13,7 @@ import { Comment } from '../../models/coment.model';
 export class CommentsComponent implements OnInit {
 
   private doc = inject(DocumentsService);
-  private user: Store<{ user: User }> = inject(Store);
+  private user = inject(UserDataService);
   @Input() idDish: string | undefined = "";
   comments: Comment[] = [];
 
@@ -27,16 +27,17 @@ export class CommentsComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.doc.getDocuments<Comment[]>('comments').subscribe({
-      next: (value) => {
-        this.comments = value;
+
+    forkJoin({
+      comments: this.doc.getDocuments<Comment[]>('comments'),
+      username: this.user.getName()
+    }).subscribe({
+      next: ({ comments, username }) => {
+        this.comments = comments;
+        this.form.get('username')?.setValue(username);
       }
     })
 
-    this.user.select('user').subscribe(user => {
-      console.log(user);
-      this.form.get('username')?.setValue(user.userName)
-    })
   }
 
   onSubmit() {

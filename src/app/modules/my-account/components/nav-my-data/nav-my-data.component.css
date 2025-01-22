@@ -10,3 +10,12 @@ menu{
   height: inherit;
   padding: 2.7em 0;
 }
+
+
+a{
+  font-size: 24px;
+  span{
+    display: inline-block;
+    margin-left: 12px;
+  }
+}

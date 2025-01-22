@@ -1,0 +1,26 @@
+<header>
+  <h2 class="poppins-semibold">Medios de pago</h2>
+</header>
+
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="carts">
+
+    <input type="radio" name="type" [id]="type.CREDIT" [value]="type.CREDIT" checked formControlName="type">
+    <label for="credit" class="poppins-medium">Crédito</label>
+
+    <input type="radio" name="type" [id]="type.DEBIT" [value]="type.DEBIT" formControlName="type">
+    <label for="debit" class="poppins-medium">Débito</label>
+  </div>
+
+  <app-input label="Nombre y apellido" class="name" formControlName="username" />
+  <app-input label="Número de la tarjeta" class="number" formControlName="number" />
+  <app-input label="CVV" class="cvv" formControlName="cvv" />
+
+  <app-input label="Fecha de vencimiento" class="date" type="date" formControlName="expirationDate" />
+
+  <button class="button button-submit" [disabled]="!form.valid">agregar</button>
+
+</form>

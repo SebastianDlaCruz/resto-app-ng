@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { heroArrowRightStartOnRectangleSolid, heroShoppingCartSolid } from '@ng-icons/heroicons/solid';
 import { Store } from '@ngrx/store';
@@ -6,7 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { switchMap } from 'rxjs';
 import { AuthService } from '../../../core/firebase/auth/auth.service';
 import { DocumentsService } from '../../../core/firebase/documets/documents.service';
-import { TypeUser, User } from '../../../core/models';
+import { Cart, TypeUser, User } from '../../../core/models';
 import { CartState } from '../../../core/models/cart-state.model';
 import { AuthFormService } from '../../../core/services/auth-form/auth-form.service';
 import { TokenService } from '../../../core/services/token/token.service';
@@ -20,7 +20,7 @@ import { ModalFormComponent } from '../modal-form/modal-form.component';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
 
   @ViewChild('login') login?: ModalFormComponent;
   @ViewChild('register') register?: ModalFormComponent;
@@ -38,9 +38,19 @@ export class NavBarComponent {
   private docs = inject(DocumentsService);
   private token$ = inject(TokenService);
   private store: Store<CartState> = inject(Store);
+  private cart: Store<{ cart: Cart }> = inject(Store);
 
-
+  quantityItems = 1;
   shoppingCart = heroShoppingCartSolid;
+
+  ngOnInit(): void {
+    this.cart.select('cart').subscribe({
+      next: (cart) => {
+        this.quantityItems = cart.items;
+      }
+    })
+  }
+
   items: MenuItems[] = [
     {
       name: 'Carta',
@@ -183,6 +193,7 @@ export class NavBarComponent {
 
   onOpen() {
     this.store.dispatch(toggle());
+
   }
 
 }

@@ -27,3 +27,16 @@ form{
   display: grid;
   place-items: center;
 }
+
+.cart{
+  position: relative;
+  --size: 20px;
+  & .items{
+
+    position: absolute;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    background-color: rgb(243, 22, 22);
+  }
+}

@@ -2,7 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { heroShoppingCartSolid, heroStarSolid } from '@ng-icons/heroicons/solid';
 import { Store } from '@ngrx/store';
 import { Dishes } from '../../../../core/models';
-import { addDish } from '../../../../core/store/actions/cart.action';
+import { addDish, calculateItems } from '../../../../core/store/actions/cart.action';
 import { generateUUid } from '../../../../shared/utils/generate-uuid.util';
 import { UnitsService } from '../button-units/services/units.service';
 
@@ -28,6 +28,8 @@ export class DetailsComponent {
           id: generateUUid()
         }
       }));
+
+      this.store.dispatch(calculateItems());
 
       this.unit.reset();
     }

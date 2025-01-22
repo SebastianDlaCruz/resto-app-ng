@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { heroXMark } from '@ng-icons/heroicons/outline';
 import { heroShoppingCartSolid } from '@ng-icons/heroicons/solid';
 import { Store } from '@ngrx/store';
+import { combineLatest } from 'rxjs';
 import { Cart, Dish } from '../../../core/models';
 import { CartState } from '../../../core/models/cart-state.model';
 import { toggle } from '../../../core/store/actions/cart-state-action';
@@ -24,15 +25,19 @@ export class CartComponent implements OnInit {
   total = 0;
 
   ngOnInit(): void {
-    this.store.select('cartState').subscribe(res => {
-      this.stateCart = res.cartState;
-    })
-    this.storeCart.select('cart').subscribe(res => {
-      this.dishes = res.dishes;
-      this.total = res.total;
-    })
 
-
+    combineLatest({
+      stateCart: this.store.select('cartState'),
+      cart: this.storeCart.select('cart')
+    }).subscribe({
+      next: ({ stateCart, cart }) => {
+        console.log('stateCart', stateCart);
+        console.log('cart', cart);
+        this.stateCart = stateCart.cartState;
+        this.dishes = cart.dishes;
+        this.total = cart.total;
+      }
+    })
   }
 
 

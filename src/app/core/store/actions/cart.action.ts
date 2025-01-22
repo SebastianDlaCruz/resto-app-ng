@@ -15,3 +15,6 @@ export const addData = createAction('[Cart Component],AddData',
 )
 
 
+export const calculateItems = createAction('[Cart Component],calculateItems');
+
+export const resteItems = createAction('[Cart Component],resetItems');

@@ -4,8 +4,11 @@
   </a>
   <div class="nav-bar__container">
     <app-menu [items]="items" />
-    <button (click)="onOpen()">
+    <button (click)="onOpen()" class="cart">
       <ng-icon [svg]="shoppingCart" class="icon"></ng-icon>
+
+      <span class="items">{{quantityItems}}</span>
+
     </button>
   </div>
 </header>

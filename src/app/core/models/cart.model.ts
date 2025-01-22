@@ -11,4 +11,5 @@ export interface Cart {
   idUser: string;
   dishes: Dish[];
   total: number;
+  items: number;
 }

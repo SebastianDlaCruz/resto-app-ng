@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { switchMap } from 'rxjs';
 import { DocumentsService } from '../../../../core/firebase/documets/documents.service';
 import { TypeUser, User } from '../../../../core/models';
+import { UserDataService } from '../../../../core/services/user-data/user-data.service';
 import { update } from '../../../../core/store/actions/user.action';
 
 @Component({
@@ -14,8 +15,8 @@ import { update } from '../../../../core/store/actions/user.action';
 export class MyDataComponent implements OnInit {
 
   private docs = inject(DocumentsService);
-  private user: Store<{ user: User }> = inject(Store);
-
+  private userStore: Store<{ user: User }> = inject(Store);
+  private user = inject(UserDataService);
 
   form = new FormGroup({
     id: new FormControl(''),
@@ -33,20 +34,15 @@ export class MyDataComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
-    this.user.select('user').pipe(
+    this.user.getDataUser().pipe(
       switchMap(user => {
-        console.log('user', user);
-        return this.docs.getDocumentById<User>(user.id, 'id', 'users')
+        return this.docs.getDocumentById<User>(user.id, 'id', 'users');
       })
     ).subscribe({
       next: (res) => {
-
         this.updateForm(res);
       }
-    })
-
+    });
   }
 
   updateForm(user: User) {
@@ -64,7 +60,7 @@ export class MyDataComponent implements OnInit {
   onSubmit() {
     this.docs.setDocument('users', this.form.value).subscribe({
       next: (res) => {
-        this.user.dispatch(update({
+        this.userStore.dispatch(update({
           user: this.form.value as User
         }))
       }

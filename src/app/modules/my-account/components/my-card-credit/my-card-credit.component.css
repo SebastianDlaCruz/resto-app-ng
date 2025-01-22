@@ -1,0 +1,57 @@
+form{
+  display: grid;
+  grid-template-areas:
+  "carts carts "
+  "name name "
+  "number cvv "
+  "date ."
+  ". button-submit"
+  ;
+  gap: 19px;
+}
+
+.carts{
+  grid-area: carts;
+  display:flex;
+  gap: 12px;
+  --size : 15px;
+  & input{
+    appearance: none;
+    height: var(--size);
+    width: var(--size);
+    border: 2px solid var(--button-primary);
+    border-radius: 50%;
+    outline: none;
+    background-color: transparent;
+
+    &:checked{
+      background-color: var(--button-primary);
+       box-shadow: 0 0 2px 4px var(--button-primary);
+    }
+  }
+}
+
+.name{
+  grid-area: name;
+}
+
+
+.number{
+  grid-area: number;
+}
+
+.cvv{
+  grid-area: cvv;
+}
+
+.date{
+  grid-area: date;
+}
+
+.button-submit{
+  grid-area: button-submit;
+  justify-self: right;
+  height: 50px;
+  width: 228px;
+  border-radius: 4px;
+}

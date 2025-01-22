@@ -1,7 +1,22 @@
 <nav>
   <menu>
-    <li><a class="poppins-medium" routerLink="./my-data">Mis datos</a> </li>
-    <li><a class="poppins-medium" routerLink="/my-data">Mis tarjeta</a></li>
-    <li><a class="poppins-medium" routerLink="/my-data">Mis pedidos</a></li>
+    <li>
+      <a class="poppins-medium" routerLink="./my-data">
+        <ng-icon [svg]="userIcon"></ng-icon>
+        <span>Mis datos</span>
+      </a>
+    </li>
+    <li>
+      <a class="poppins-medium" routerLink="./my-cart-credit">
+        <ng-icon [svg]="creditCardIcon"></ng-icon>
+        <span> Mis tarjeta</span>
+      </a>
+    </li>
+    <li>
+      <a class="poppins-medium" routerLink="/my-data">
+        <ng-icon [svg]="shoppingCartIcon"></ng-icon>
+        <span>Mis pedidos</span>
+      </a>
+    </li>
   </menu>
 </nav>

@@ -1,13 +1,14 @@
 import { createReducer, on } from "@ngrx/store";
 import { Cart } from "../../models";
-import { addData, addDish, deleteDish } from "../actions/cart.action";
+import { addData, addDish, calculateItems, deleteDish, resteItems } from "../actions/cart.action";
 
 
 export const initStateCart: Cart = {
   id: '',
   idUser: '',
   dishes: [],
-  total: 0
+  total: 0,
+  items: 0
 }
 
 let total = 0;
@@ -50,5 +51,17 @@ export const cartReducer = createReducer(
       idUser
     })
   ),
+
+  on(calculateItems,
+    (state) => ({
+      ...state,
+      items: [... new Set(state.dishes)].length
+    })
+  ),
+
+  on(resteItems, (state) => ({
+    ...state,
+    items: 0
+  }))
 
 )
