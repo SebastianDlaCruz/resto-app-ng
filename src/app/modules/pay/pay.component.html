@@ -1,0 +1,95 @@
+<main>
+  <section class="poppins-semibold submission">
+
+    <header>
+      <h2>Envió</h2>
+    </header>
+
+    <form [formGroup]="form">
+
+      <div class="container-radios">
+        <input type="radio" name="shipment" [id]="type.LOCAL" [value]="type.LOCAL" checked formControlName="shipment">
+        <label [for]="type.LOCAL" class="poppins-medium">Retiro en local</label>
+
+        <input type="radio" name="shipment" [id]="type.DELIVERY" [value]="type.DELIVERY" formControlName="shipment">
+        <label [for]="type.DELIVERY" class="poppins-medium">Delivery</label>
+      </div>
+
+      <article>
+        <header>
+          <h3>Pago</h3>
+        </header>
+
+        <div class="container-radios">
+          <input type="radio" name="typeCard" [id]="TypeCardCredit.DEBIT" [value]="TypeCardCredit.DEBIT" checked
+            formControlName="typeCard">
+          <label [for]="TypeCardCredit.DEBIT" class="poppins-medium">Débito</label>
+
+          <input type="radio" name="typeCard" [id]="TypeCardCredit.CREDIT" [value]="TypeCardCredit.CREDIT"
+            formControlName="typeCard">
+          <label [for]="TypeCardCredit.CREDIT" class="poppins-medium">Crédito</label>
+        </div>
+
+        @if (cards.length > 0) {
+        <select class="select-cards">
+          @for (card of cards; track card.id) {
+          <option [value]="card.id">{{card | formatCardBank | async}}</option>
+          }
+        </select>
+
+
+        }@else {
+        <div class="container-pay">
+          <app-input label="Numero de tarjeta" class="number" />
+          <app-input label="Fecha de vencimiento" class="date" />
+          <app-input label="Cvv" class="cvv" />
+        </div>
+        }
+
+
+      </article>
+
+      <button class="button confirm flex-center poppins-bold">Confirmar</button>
+
+    </form>
+  </section>
+
+  <section class="poppins-semibold summary">
+    <header>
+      <h2>Resumen</h2>
+    </header>
+
+    <article>
+      <div class="button-border container-info">
+        @for (dish of cart?.dishes; track $index) {
+        <p class="poppins-regular"> {{dish.count}} X </p>
+        <p class="poppins-regular"> {{dish.dishes.name}}</p>
+        }
+
+      </div>
+
+      <div class="button-border container-info">
+        <p class="poppins-regular">Sub total</p>
+        <p class="poppins-regular">${{cart?.total}}</p>
+      </div>
+      @if(shipment && shipment === type.DELIVERY ){
+      <div class="container-info">
+        <p class="poppins-regular">Envio</p>
+        <p class="poppins-regular"> $450</p>
+      </div>
+      }
+
+
+      <footer class=" container-info">
+        <div>
+          <p class="footer-p">Total</p>
+          <p class="footer-p poppins-regular"> <small>Retiro en local: Urquiza 2345 - Capital</small></p>
+        </div>
+
+        <strong>$ {{cart?.total}}</strong>
+
+      </footer>
+    </article>
+
+  </section>
+</main>

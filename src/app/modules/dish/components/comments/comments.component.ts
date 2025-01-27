@@ -1,6 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { forkJoin } from 'rxjs';
+import { combineLatest } from 'rxjs';
 import { DocumentsService } from '../../../../core/firebase/documets/documents.service';
 import { UserDataService } from '../../../../core/services/user-data/user-data.service';
 import { generateUUid } from '../../../../shared/utils/generate-uuid.util';
@@ -28,7 +28,7 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    forkJoin({
+    combineLatest({
       comments: this.doc.getDocuments<Comment[]>('comments'),
       username: this.user.getName()
     }).subscribe({

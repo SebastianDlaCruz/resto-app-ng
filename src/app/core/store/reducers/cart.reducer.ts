@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Cart } from "../../models";
+import { Cart, PaidStatus } from "../../models";
 import { addData, addDish, calculateItems, deleteDish, resteItems } from "../actions/cart.action";
 
 
@@ -8,7 +8,8 @@ export const initStateCart: Cart = {
   idUser: '',
   dishes: [],
   total: 0,
-  items: 0
+  items: 0,
+  state: PaidStatus.PENDING
 }
 
 let total = 0;
@@ -39,7 +40,8 @@ export const cartReducer = createReducer(
       return {
         ...state,
         dishes: updateDishes,
-        total: newTotal
+        total: newTotal,
+        items: updateDishes.length
       }
     }
   ),

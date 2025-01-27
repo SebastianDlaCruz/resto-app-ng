@@ -6,10 +6,18 @@ export interface Dish {
   dishes: Dishes;
 }
 
+export enum PaidStatus {
+  PAY = 'pay',
+  PENDING = 'pending'
+}
+
 export interface Cart {
   id: string;
   idUser: string;
   dishes: Dish[];
   total: number;
   items: number;
+  state: PaidStatus
+
 }
+

@@ -32,11 +32,15 @@ form{
   position: relative;
   --size: 20px;
   & .items{
-
     position: absolute;
+    inset-inline: 58%;
+    inset-block: -20%;
     height: var(--size);
     width: var(--size);
     border-radius: 50%;
+    text-align: center;
+    line-height: var(--size);
+    color: var(--text-primary);
     background-color: rgb(243, 22, 22);
   }
 }

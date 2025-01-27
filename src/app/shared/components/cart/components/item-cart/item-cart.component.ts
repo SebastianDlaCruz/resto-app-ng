@@ -17,6 +17,7 @@ export class ItemCartComponent {
   onDelete(id: string) {
     this.store.dispatch(deleteDish({
       idDish: id
-    }))
+    }));
+
   }
 }

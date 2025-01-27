@@ -3,6 +3,7 @@
   border-radius: 4px;
   background-color: var(--button-primary);
   transition: background-color 1s ease-out;
+
   &:disabled{
   background-color: var(--sec);
   }

@@ -1,0 +1,18 @@
+
+input[type="radio"]{
+  --size : 15px;
+  appearance: none;
+  height: var(--size);
+  width: var(--size);
+  border: 2px solid var(--button-primary);
+  border-radius: 50%;
+  outline: none;
+  background-color: transparent;
+
+
+  &:checked{
+    background-color: var(--button-primary);
+     box-shadow: 0 0 2px 4px var(--button-primary);
+  }
+
+}

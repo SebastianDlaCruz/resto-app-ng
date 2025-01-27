@@ -25,6 +25,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'pay',
+    loadChildren: () => import('./modules/pay/pay.module').then(m => m.PayModule)
+  },
+
+  {
     path: '**',
     loadChildren: () => import('./modules/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
