@@ -17,20 +17,19 @@ export class AppComponent implements OnInit {
   private cookie = inject(CookieService);
 
   ngOnInit(): void {
+    this.getUser();
+  }
 
-    this.store.select('user').subscribe(user => {
-      this.type = user.type;
-    });
-
+  getUser(): void {
     if (this.cookie.get('user')) {
       const user = JSON.parse(this.cookie.get('user'));
-      console.log('user', user);
       if (user) {
+        this.type = user.type;
         this.store.dispatch(initAuth({
           user
         }))
       }
     }
-
   }
+
 }

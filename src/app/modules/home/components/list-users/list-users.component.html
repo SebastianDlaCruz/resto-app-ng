@@ -1,5 +1,8 @@
 <div class="container-users">
   @for (user of users; track user.name) {
   <app-user [user]="user"></app-user>
+  }@empty {
+  <span class="poppins-light" id="not-users">Sin Usuarios</span>
   }
+
 </div>

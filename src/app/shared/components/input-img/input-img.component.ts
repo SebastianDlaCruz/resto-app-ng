@@ -19,27 +19,39 @@ export class InputImgComponent implements ControlValueAccessor {
   @Input() refId = "";
   @Input() placeholder = "";
   @Input() control?: AbstractControl<string | null, string | null> | null;
+  invalid = false;
 
   value?: File;
 
-  onChange?: (value: File) => void;
+  onChange?: (value: File | null) => void;
   onTouched?: () => void;
 
   writeValue(value: File): void {
     this.value = value;
+
   }
-  registerOnChange(fn: (value: File) => void): void {
+
+  registerOnChange(fn: (value: File | null) => void): void {
     this.onChange = fn;
+
   }
+
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
   onInputChange(input: HTMLInputElement) {
-
-    if (input.files) {
+    if (input.files && input.files.length > 0) {
       this.placeholder = input.files[0].name;
-      this.onChange?.(input.files[0])
+      this.onChange?.(input.files[0]);
+
+    }
+
+  }
+
+  onError(input: HTMLInputElement) {
+    if (input.files) {
+      this.invalid = input.files.length === 0 ? true : false;
     }
 
   }

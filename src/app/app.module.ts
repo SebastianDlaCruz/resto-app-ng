@@ -12,22 +12,19 @@ import { AppComponent } from './app.component';
 import { cartStateReducer } from './core/store/reducers/cart-state.reducer';
 import { cartReducer } from './core/store/reducers/cart.reducer';
 import { userReducer } from './core/store/reducers/user.reducer';
-import { LetterModule } from "./modules/letter/letter.module";
 import { ComponentsModule } from './shared/components/components.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ user: userReducer, cart: cartReducer, cartState: cartStateReducer }),
-    LetterModule,
-    ComponentsModule
+    ComponentsModule,
+
   ],
   providers: [
     CookieService,

@@ -8,7 +8,8 @@ export class AuthFormService {
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(12)])
+    password: new FormControl('', [Validators.required, Validators.minLength(12)]),
+
   });
 
   generateForm(): FormGroup {
